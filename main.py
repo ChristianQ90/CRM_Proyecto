@@ -40,6 +40,7 @@ class MainWindow(QMainWindow):
         self.ui.empresa_correo_electronico.setText(empresa_data[1])  # Email
         self.ui.empresa_direccion.setText(empresa_data[2])  # Dirección
         self.ui.empresa_telefono.setText(empresa_data[3])  # Teléfono
+        self.ui.empresa_contrasenya.setText(empresa_data[4])  # Contraseña
         # Conectar el botón para guardar cambios
         self.ui.empresa_btn_guardar_cambios.clicked.connect(self.guardar_cambios_empresa)
 
@@ -272,9 +273,10 @@ class MainWindow(QMainWindow):
         nuevo_email = self.ui.empresa_correo_electronico.text()
         nueva_direccion = self.ui.empresa_direccion.text()
         nuevo_telefono = self.ui.empresa_telefono.text()
+        nueva_contrasenya = self.ui.empresa_contrasenya.text()
 
         # Validar que no estén vacíos
-        if not nuevo_email or not nueva_direccion or not nuevo_telefono:
+        if not nuevo_email or not nueva_direccion or not nuevo_telefono or not nueva_contrasenya:
             QMessageBox.warning(self, "Error", "Por favor, completa todos los campos.")
             return
 
@@ -284,9 +286,9 @@ class MainWindow(QMainWindow):
         try:
             cursor.execute('''
                 UPDATE IDENTIFICACION
-                SET MAIL = ?, DIRECCION = ?, TELEFONO = ?
+                SET MAIL = ?, DIRECCION = ?, TELEFONO = ?, PASSWORD = ?
                 WHERE NOMBRE_EMPRESA = ?
-            ''', (nuevo_email, nueva_direccion, nuevo_telefono, self.company_name))
+            ''', (nuevo_email, nueva_direccion, nuevo_telefono, nueva_contrasenya, self.company_name))
             conn.commit()
             QMessageBox.information(self, "Éxito", "Datos actualizados correctamente.")
         except sqlite3.IntegrityError as e:
@@ -1295,7 +1297,7 @@ class LoginWindow(QMainWindow):
         """Abre la ventana principal y carga los datos de la empresa."""
         conn = sqlite3.connect(f"database/{company_name}.db")
         cursor = conn.cursor()
-        cursor.execute('SELECT NOMBRE_EMPRESA, MAIL, DIRECCION, TELEFONO FROM IDENTIFICACION WHERE NOMBRE_EMPRESA = ?', (company_name,))
+        cursor.execute('SELECT NOMBRE_EMPRESA, MAIL, DIRECCION, TELEFONO, PASSWORD FROM IDENTIFICACION WHERE NOMBRE_EMPRESA = ?', (company_name,))
         empresa_data = cursor.fetchone()
         conn.close()
 

@@ -88,7 +88,7 @@ class Ui_MainWindow(object):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.btn_ver_oportunidades = QtWidgets.QPushButton(self.page_pipeline)
-        self.btn_ver_oportunidades.setGeometry(QtCore.QRect(160, 410, 211, 41))
+        self.btn_ver_oportunidades.setGeometry(QtCore.QRect(100, 410, 211, 41))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(True)
@@ -120,7 +120,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_ver_oportunidades.setObjectName("btn_ver_oportunidades")
         self.btn_mover_fase_anterior = QtWidgets.QPushButton(self.page_pipeline)
-        self.btn_mover_fase_anterior.setGeometry(QtCore.QRect(440, 410, 231, 41))
+        self.btn_mover_fase_anterior.setGeometry(QtCore.QRect(390, 410, 231, 41))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(True)
@@ -152,7 +152,7 @@ class Ui_MainWindow(object):
 "}")
         self.btn_mover_fase_anterior.setObjectName("btn_mover_fase_anterior")
         self.btn_mover_fase_siguiente = QtWidgets.QPushButton(self.page_pipeline)
-        self.btn_mover_fase_siguiente.setGeometry(QtCore.QRect(710, 410, 241, 41))
+        self.btn_mover_fase_siguiente.setGeometry(QtCore.QRect(690, 410, 241, 41))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(True)
@@ -209,7 +209,7 @@ class Ui_MainWindow(object):
         self.page_empresa = QtWidgets.QWidget()
         self.page_empresa.setObjectName("page_empresa")
         self.formLayoutWidget = QtWidgets.QWidget(self.page_empresa)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(220, 70, 611, 271))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(220, 70, 611, 287))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -281,6 +281,22 @@ class Ui_MainWindow(object):
         self.empresa_telefono.setFont(font)
         self.empresa_telefono.setObjectName("empresa_telefono")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.empresa_telefono)
+        self.label_42 = QtWidgets.QLabel(self.formLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_42.setFont(font)
+        self.label_42.setAutoFillBackground(False)
+        self.label_42.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_42.setObjectName("label_42")
+        self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_42)
+        self.empresa_contrasenya = QtWidgets.QLineEdit(self.formLayoutWidget)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.empresa_contrasenya.setFont(font)
+        self.empresa_contrasenya.setObjectName("empresa_contrasenya")
+        self.formLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.empresa_contrasenya)
         self.empresa_btn_guardar_cambios = QtWidgets.QPushButton(self.page_empresa)
         self.empresa_btn_guardar_cambios.setGeometry(QtCore.QRect(220, 420, 611, 41))
         font = QtGui.QFont()
@@ -2141,7 +2157,7 @@ class Ui_MainWindow(object):
         self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        #Defino botones principales y sus funciones para cambiar de pagina
+        #Defino botones principales y sus funciones para cambiar de página
     # PIPELINE
         self.btn_pipeline.clicked.connect(self.go_to_pipeline)
         
@@ -2226,7 +2242,6 @@ class Ui_MainWindow(object):
 
         #Hasta aquí 
 
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -2247,6 +2262,7 @@ class Ui_MainWindow(object):
         self.label_7.setText(_translate("MainWindow", "Correo electrónico: "))
         self.label_8.setText(_translate("MainWindow", "Dirección: "))
         self.label_9.setText(_translate("MainWindow", "Teléfono: "))
+        self.label_42.setText(_translate("MainWindow", "Contraseña: "))
         self.empresa_btn_guardar_cambios.setText(_translate("MainWindow", "Guardar cambios"))
         self.label_13.setText(_translate("MainWindow", "Datos de la empresa"))
         item = self.clientes_tabla.horizontalHeaderItem(0)

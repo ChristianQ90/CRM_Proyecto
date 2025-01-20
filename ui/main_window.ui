@@ -189,7 +189,7 @@ QLabel {
      <widget class="QPushButton" name="btn_ver_oportunidades">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>100</x>
         <y>410</y>
         <width>211</width>
         <height>41</height>
@@ -235,7 +235,7 @@ QPushButton:disabled {
      <widget class="QPushButton" name="btn_mover_fase_anterior">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>390</x>
         <y>410</y>
         <width>231</width>
         <height>41</height>
@@ -281,7 +281,7 @@ QPushButton:disabled {
      <widget class="QPushButton" name="btn_mover_fase_siguiente">
       <property name="geometry">
        <rect>
-        <x>710</x>
+        <x>690</x>
         <y>410</y>
         <width>241</width>
         <height>41</height>
@@ -388,7 +388,7 @@ p, li { white-space: pre-wrap; }
         <x>220</x>
         <y>70</y>
         <width>611</width>
-        <height>271</height>
+        <height>287</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
@@ -510,6 +510,35 @@ p, li { white-space: pre-wrap; }
        </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="empresa_telefono">
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_42">
+         <property name="font">
+          <font>
+           <pointsize>-1</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Contraseña: </string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="empresa_contrasenya">
          <property name="font">
           <font>
            <pointsize>14</pointsize>
