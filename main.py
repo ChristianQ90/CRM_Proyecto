@@ -639,7 +639,7 @@ class MainWindow(QMainWindow):
 
         self.ui.nuevo_presupuesto_combo_productos.clear()
         for producto in productos:
-            self.ui.nuevo_presupuesto_combo_productos.addItem(f"{producto[1]} - ${producto[2]:.2f}", producto)
+            self.ui.nuevo_presupuesto_combo_productos.addItem(f"{producto[1]} - {producto[2]:.2f} €", producto)
 
     def agregar_producto_desde_combo(self):
         """Agrega un producto desde el combo box a la tabla o actualiza su cantidad si ya existe."""
